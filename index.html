@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Undangan Pernikahan Ridwan &amp; Shiva</title>
+  <meta name="description" content="Minggu, 29 November 2026 · Dapoer Nusantara, Pontianak">
+  <meta name="theme-color" content="#5c1420">
+  <meta property="og:title" content="Undangan Pernikahan Ridwan &amp; Shiva">
+  <meta property="og:description" content="Anda diundang ke pernikahan kami.">
+  <meta property="og:image" content="cover.jpg">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+  <!-- COVER -->
+  <section id="cover" class="cover">
+    <div class="cover-bg" id="coverBg"></div>
+    <div class="cover-inner">
+      <p class="kicker" id="coverKicker"></p>
+      <h1 class="names script"><span id="coverGroom"></span><span class="amp">&amp;</span><span id="coverBride"></span></h1>
+      <div class="guest">
+        <p id="coverGuestLabel"></p>
+        <p class="guest-name" id="guestName"></p>
+      </div>
+      <button class="btn" id="openBtn" type="button"></button>
+    </div>
+  </section>
+
+  <main id="main" hidden>
+
+    <!-- HERO / COUPLE -->
+    <section class="section couple" id="couple">
+      <div class="container reveal">
+        <p class="kicker" id="coupleIntro"></p>
+
+        <figure class="portrait" id="portrait" hidden>
+          <video id="heroVideo" muted loop playsinline preload="none"></video>
+          <img id="coupleImg" alt="Foto mempelai" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="person">
+          <h2 class="script" id="groomFull"></h2>
+          <p class="parents"><span id="groomSonOf"></span><br><strong id="groomParents"></strong></p>
+        </div>
+        <div class="divider"><span>&amp;</span></div>
+        <div class="person">
+          <h2 class="script" id="brideFull"></h2>
+          <p class="parents"><span id="brideDaughterOf"></span><br><strong id="brideParents"></strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="section countdown" id="countdownSection">
+      <div class="container reveal">
+        <h3 class="title" id="countdownTitle"></h3>
+        <div class="timer" id="timer" aria-live="off">
+          <div><b id="cdD">00</b><span>Hari</span></div>
+          <div><b id="cdH">00</b><span>Jam</span></div>
+          <div><b id="cdM">00</b><span>Menit</span></div>
+          <div><b id="cdS">00</b><span>Detik</span></div>
+        </div>
+        <p class="done" id="cdDone" hidden>Hari bahagia telah tiba 🤍</p>
+      </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="section event" id="event">
+      <div class="container reveal">
+        <h3 class="title" id="eventTitle"></h3>
+
+        <a class="card card-link" id="dateLink" target="_blank" rel="noopener">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          </span>
+          <span class="card-label" id="saveTheDate"></span>
+          <span class="card-main" id="dateLabel"></span>
+          <span class="card-hint" id="saveHint"></span>
+        </a>
+
+        <a class="card card-link" id="venueLink" target="_blank" rel="noopener">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          </span>
+          <span class="card-label" id="venueName"></span>
+          <span class="card-main small" id="venueAddress"></span>
+          <span class="card-hint" id="mapsHint"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="section map" id="mapSection">
+      <div class="container reveal">
+        <div class="map-frame">
+          <iframe id="mapFrame" title="Peta lokasi acara" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <a class="btn btn-outline" id="mapsBtn" target="_blank" rel="noopener"></a>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery" id="gallerySection" hidden>
+      <div class="container reveal">
+        <div class="grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section rsvp" id="rsvp">
+      <div class="container reveal">
+        <h3 class="title" id="rsvpTitle"></h3>
+        <p class="lead" id="rsvpIntro"></p>
+        <form id="rsvpForm" novalidate>
+          <label>Nama lengkap
+            <input type="text" name="name" id="fName" required maxlength="80" autocomplete="name">
+          </label>
+          <fieldset>
+            <legend>Apakah Anda akan hadir?</legend>
+            <label class="radio"><input type="radio" name="attendance" value="Attending" checked><span>Dengan senang hati hadir</span></label>
+            <label class="radio"><input type="radio" name="attendance" value="Not attending"><span>Mohon maaf, tidak dapat hadir</span></label>
+          </fieldset>
+          <label id="guestsWrap">Jumlah tamu
+            <select name="guests" id="fGuests">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            </select>
+          </label>
+          <label>Ucapan &amp; doa
+            <textarea name="message" rows="4" maxlength="500" placeholder="Tulis pesan Anda…"></textarea>
+          </label>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <button class="btn" type="submit" id="rsvpBtn">Kirim RSVP</button>
+          <p class="form-msg" id="rsvpMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="section closing" id="closing">
+      <div class="container reveal">
+        <p class="lead" id="closingText"></p>
+        <p class="sign" id="closingSign"></p>
+        <p class="script big" id="closingNames"></p>
+      </div>
+      <footer>Dibuat dengan cinta</footer>
+    </section>
+  </main>
+
+  <button class="music" id="musicBtn" type="button" aria-label="Putar atau jeda musik" hidden>
+    <svg class="ic-on" viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+    <svg class="ic-off" viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/><path d="M3 3l18 18"/></svg>
+  </button>
+  <audio id="bgm" loop preload="none"></audio>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
