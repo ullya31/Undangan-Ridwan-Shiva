@@ -20,7 +20,7 @@ img,video{max-width:100%;display:block}
 .cover{position:fixed;inset:0;z-index:50;display:grid;place-items:center;color:#fff;text-align:center;
   background:#4a0f19;transition:transform 1s cubic-bezier(.77,0,.18,1),opacity .8s}
 .cover.open{transform:translateY(-100%);opacity:0;pointer-events:none}
-.cover-bg{position:absolute;inset:0;background:center/cover no-repeat;filter:brightness(.7);transform:scale(1.06);animation:zoom 14s ease-out forwards}
+.cover-bg{position:absolute;inset:0;background:center/cover no-repeat;filter:brightness(.9);transform:scale(1.06);animation:zoom 14s ease-out forwards}
 @keyframes zoom{to{transform:scale(1)}}
 .cover-inner{position:relative;padding:24px;width:min(92%,480px)}
 .cover .kicker{color:#f0e6d3}
